@@ -12,7 +12,7 @@
         <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
           <div class="search-bar border rounded-2 px-3 border-dark-subtle">
             <form id="search-form" class="text-center d-flex align-items-center" action="" method="">
-              <input type="text" class="form-control border-0 bg-transparent"
+              <input type="text" class="form-control border-0 bg-transparent py-4"
                 placeholder="Search for more than 10,000 products" />
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="currentColor"
@@ -92,17 +92,20 @@
           </div>
 
           <div class="offcanvas-body justify-content-between">
-            <select class="filter-categories border-0 mb-0 me-5">
-              <option>Shop by Category</option>
-              <option>Clothes</option>
-              <option>Food</option>
-              <option>Food</option>
-              <option>Toy</option>
-            </select>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu z-3">
+                <li><a class="dropdown-item" href="#">Clothes</a></li>
+                <li><a class="dropdown-item" href="#">Food</a></li>
+                <li><a class="dropdown-item" href="#">Toy</a></a></li>
+              </ul>
+            </div>
 
             <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
               <li class="nav-item">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="/" class="nav-link active">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"
@@ -150,28 +153,30 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">Others</a>
               </li>
-              <li class="nav-item">
-                <a href="https://templatesjungle.gumroad.com/l/waggy-pet-shop-ecommerce-html-website-template" class="nav-link fw-bold text-dark" target="_blank">GET PRO</a>
-              </li>
             </ul>
 
-            <div class="d-none d-lg-flex align-items-end">
+            <div class="d-none d-lg-flex align-items-center">
               <ul class="d-flex justify-content-end list-unstyled m-0">
                 <li>
-                  <a href="account.html" class="mx-3">
-                    <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
-                  </a>
+                  <a href="/users/" class="mx-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>                  </a>
                 </li>
                 <li>
                   <a href="wishlist.html" class="mx-3">
-                    <iconify-icon icon="mdi:heart" class="fs-4"></iconify-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                    </svg>                  
                   </a>
                 </li>
 
                 <li class="">
                   <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
                     aria-controls="offcanvasCart">
-                    <iconify-icon icon="mdi:cart" class="fs-4 position-relative"></iconify-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                    </svg>
                     <span class="position-absolute translate-middle badge rounded-circle bg-primary pt-2">
                       03
                     </span>
@@ -186,8 +191,5 @@
         </div>
 
       </nav>
-
-
-
     </div>
   </header>
