@@ -11,12 +11,19 @@ Route::get('/',
 [
     PagesController::class,
     'index'
-]);
+]) ->name('index');
 
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::resource('/foods', FoodsController::class);
-Route::resource('/users', UsersController::class);
+Route::get('/login', [UsersController::class, 'index']) -> name('login');
+Route::get('/logout', [UsersController::class, 'logout']) -> name('logout');
+
+Route::post('/login', [UsersController::class, 'login']);
+
+Route::get('/create', [UsersController::class, 'create']) -> name('create');
+Route::post('/create', [UsersController::class, 'postCreate']);
+
 
 Route::get('products',
 [

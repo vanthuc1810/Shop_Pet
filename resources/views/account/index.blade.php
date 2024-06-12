@@ -3,8 +3,9 @@
     @section('content')
     <div class="container my-5 py-5">
         <div class="option justify-content-center border-bottom border-dark-subtle mb-3 text-center">
-            <a href="/users" class="mx-3 fs-3 text-uppercase active">log in</a>
-            <a href="/users/create" class="mx-3 fs-3 text-uppercase">SIGN UP</a>
+            <a href={{route('login')}} class="mx-3 fs-3 text-uppercase">log in</a>
+            <a href={{route('create')}} class="mx-3 fs-3 text-uppercase active">SIGN UP</a>
+            {{ $errors -> first('confirm_password') }}
         </div>
         <div class="col-8 mx-auto mt-5">
             <div class="form-input text-center">
@@ -27,17 +28,18 @@
 
             <div class="form-input">
                 <label for="" class="text-start border-bottom border-0 w-100 border-dark-subtle">Or Log-in With Email</label>
-                <form>
+                <form action="" method="POST">
+                    @csrf
                     <div class="form-input col-lg-12 my-4">
                         <div class="mb-3">
-                            <input type="email" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Address">
+                            <input type="email" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Address" name="email">
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Enter Password">
+                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Enter Password" name="password">
                         </div>
                         <div class="mb-3 form-check d-flex justify-content-between">
                             <div class="">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                                 <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                             </div>
                             <div class="">
@@ -45,12 +47,21 @@
                             </div>
                         </div>
                         <button type="submit" class="text-uppercase w-100 btn btn-lg btn-dark rounded-1 py-4">log in</button>
+                        @if ($message = Session::get('success'))
+
+                        <div class="alert alert-success alert-block">
+
+                            <button type="button" class="close" data-dismiss="alert">×</button>	
+
+                                <strong>{{ $message }}</strong>
+
+                        </div>
+
+                        @endif
                     </div>
                 </form>
             </div>
             
         </div>
-    </div>
-    
-      
+    </div>      
     @endsection

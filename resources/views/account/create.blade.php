@@ -3,8 +3,8 @@
     @section('content')
     <div class="container my-5 py-5">
         <div class="option justify-content-center border-bottom border-dark-subtle mb-3 text-center">
-            <a href="/users" class="mx-3 fs-3 text-uppercase">log in</a>
-            <a href="/users/create" class="mx-3 fs-3 text-uppercase active">SIGN UP</a>
+            <a href={{route('login')}} class="mx-3 fs-3 text-uppercase">log in</a>
+            <a href={{route('create')}} class="mx-3 fs-3 text-uppercase active">SIGN UP</a>
         </div>
         <div class="col-8 mx-auto mt-5">
             <div class="form-input text-center">
@@ -27,19 +27,20 @@
 
             <div class="form-input">
                 <label for="" class="text-start border-bottom border-0 w-100 border-dark-subtle">Or Log-in With Email</label>
-                <form>
+                <form action="" method="POST">
+                    @csrf
                     <div class="form-input col-lg-12 my-4">
                         <div class="mb-3">
-                            <input type="text" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Your Full Name">
+                            <input type="text" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Your Full Name" name="name">
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email Address">
+                            <input type="email" class="form-control mb-3 p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email Address" name="email">
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Set Your Password">
+                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Set Your Password" name="password">
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Retype Your Password">
+                            <input type="password" class="form-control mb-3 p-4" id="exampleInputPassword1" placeholder="Retype Your Password" name="confirm_password">
                         </div>
                         <div class="mb-3 form-check d-flex justify-content-between">
                             <div class="">
@@ -50,13 +51,10 @@
                                 <a href="" class="text-primary">Forgot Password</a>
                             </div>
                         </div>
-                        <button type="submit" class="text-uppercase w-100 btn btn-lg btn-dark rounded-1 py-4">log in</button>
+                        <button type="submit" class="text-uppercase w-100 btn btn-lg btn-dark rounded-1 py-4">create</button>
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
-    
-      
     @endsection
